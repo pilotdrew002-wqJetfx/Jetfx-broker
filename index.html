@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07111d"><title>JetFx | Trade Beyond Limits</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+  <a class="brand" href="#dashboard"><span class="brand-symbol">J<span>F</span></span><span class="brand-name">JET<span>FX</span></span></a>
+  <div class="profile-switch"><div class="avatar">JD</div><div><small>ACCOUNT</small><b>JetFx Demo</b></div><span class="switch-arrow">⌄</span></div>
+  <div class="side-caption">TRADING</div>
+  <nav>
+    <a class="nav-link active" href="#dashboard"><i>▦</i> Dashboard</a>
+    <a class="nav-link" href="#markets"><i>⌁</i> Markets <span class="nav-badge">24</span></a>
+    <a class="nav-link" href="#trade"><i>↗</i> Trade</a>
+    <a class="nav-link" href="#positions"><i>◫</i> Open positions</a>
+    <a class="nav-link" href="#history"><i>◷</i> Order history</a>
+  </nav>
+  <div class="side-caption">ACCOUNT</div>
+  <nav>
+    <a class="nav-link" href="#wallet"><i>◈</i> Wallet</a>
+    <a class="nav-link" href="#verification"><i>▣</i> Verification <span class="tiny-pending">Demo</span></a>
+    <a class="nav-link" href="#settings"><i>⚙</i> Settings</a>
+    <a class="nav-link" href="#support"><i>✳</i> Help centre</a>
+  </nav>
+  <div class="sidebar-spacer"></div>
+  <div class="support-card"><div class="support-icon">✦</div><b>Need a hand?</b><p>Visit our help centre for platform guides and support.</p><a href="#support">Get support <span>→</span></a></div>
+  <div class="side-user"><div class="avatar small-avatar">JD</div><div><b>JetFx Demo</b><small>Personal account</small></div><button aria-label="Account menu">•••</button></div>
+</aside>
+
+<main class="main">
+<header class="topbar">
+  <button class="mobile-menu" id="menuBtn">☰</button>
+  <div class="crumb">Workspace <span>/</span> <b id="crumbName">Dashboard</b></div>
+  <div class="topbar-right"><div class="connection"><span></span> Demo environment</div><button class="top-icon" id="notificationBtn">♧<em></em></button><button class="help-top" onclick="showToast('Help centre is a demo section.')">? <span>Help</span></button><div class="top-avatar">JD</div></div>
+</header>
+
+<section class="page" id="dashboard">
+  <div class="hero-row"><div><div class="overline">SUNDAY, NOVEMBER 8, 2026 <span class="hero-line"></span> YOUR TRADING SPACE</div><h1>Welcome back, Trader<span class="mint">.</span></h1><p class="subhead">Your markets, portfolio and trading activity — all in one place.</p></div><div class="hero-actions"><button class="button secondary" id="exportBtn">↓ Export report</button><a class="button primary" href="#trade">＋ Open a trade</a></div></div>
+  <div class="demo-banner"><span class="demo-symbol">ⓘ</span><div><b>You’re viewing a demo account</b><span>All balances, prices and orders on this website are sample data. No real funds or trades are involved.</span></div><button onclick="this.parentElement.style.display='none'">×</button></div>
+
+  <div class="metric-grid">
+    <article class="metric feature-metric"><div class="metric-head"><span>Net account value</span><span class="metric-icon">◈</span></div><div class="metric-value" id="balance">$25,000.00</div><div class="metric-bottom"><span class="tag-up">↗ 2.74%</span><span>vs. previous month</span></div><div class="metric-orb"></div></article>
+    <article class="metric"><div class="metric-head"><span>Equity</span><span class="metric-icon">⌁</span></div><div class="metric-value" id="equity">$25,684.32</div><div class="metric-bottom"><span class="tag-up">+$684.32</span><span>unrealised P/L</span></div></article>
+    <article class="metric"><div class="metric-head"><span>Available margin</span><span class="metric-icon">▱</span></div><div class="metric-value">$22,410.80</div><div class="metric-bottom"><span class="tag-blue">87.2%</span><span>of account equity</span></div></article>
+    <article class="metric"><div class="metric-head"><span>Today's P/L</span><span class="metric-icon">↗</span></div><div class="metric-value green-text" id="dailyPL">+$184.60</div><div class="metric-bottom"><span class="tag-up">+1.18%</span><span>today</span></div></article>
+  </div>
+
+  <div class="grid-main">
+    <section class="card performance-card">
+      <div class="card-head"><div><div class="overline">PERFORMANCE</div><h2>Portfolio overview</h2></div><div class="range-tabs"><button>1D</button><button>1W</button><button class="chosen">1M</button><button>3M</button><button>1Y</button></div></div>
+      <div class="performance-number"><strong>$25,684.32</strong><span class="tag-up">↗ $684.32 (2.74%)</span></div>
+      <div class="graph-area"><div class="y-axis"><span>26,000</span><span>25,500</span><span>25,000</span><span>24,500</span><span>24,000</span></div><svg viewBox="0 0 760 230" preserveAspectRatio="none" class="graph"><defs><linearGradient id="fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#27d6a2" stop-opacity=".24"/><stop offset="1" stop-color="#27d6a2" stop-opacity="0"/></linearGradient></defs><path fill="url(#fill)" d="M0 180 C35 174 48 192 76 165 S118 149 142 161 S180 122 210 140 S250 129 282 114 S318 137 350 104 S395 117 425 91 S466 109 500 78 S543 100 570 70 S614 85 644 53 S687 70 716 35 S746 44 760 18 L760 230 L0 230Z"/><path d="M0 180 C35 174 48 192 76 165 S118 149 142 161 S180 122 210 140 S250 129 282 114 S318 137 350 104 S395 117 425 91 S466 109 500 78 S543 100 570 70 S614 85 644 53 S687 70 716 35 S746 44 760 18" fill="none" stroke="#27d6a2" stroke-width="2.7" vector-effect="non-scaling-stroke"/></svg></div>
+      <div class="x-axis"><span>Oct 09</span><span>Oct 16</span><span>Oct 23</span><span>Oct 30</span><span>Nov 08</span></div>
+    </section>
+    <section class="card allocation-card"><div class="card-head"><div><div class="overline">ASSET ALLOCATION</div><h2>Portfolio mix</h2></div><button class="more-btn">•••</button></div><div class="allocation-content"><div class="donut"><div><b>4</b><small>Asset classes</small></div></div><div class="legend"><div><i class="c-gold"></i><span>Forex</span><b>42%</b></div><div><i class="c-blue"></i><span>Commodities</span><b>28%</b></div><div><i class="c-purple"></i><span>Crypto</span><b>18%</b></div><div><i class="c-green"></i><span>Indices</span><b>12%</b></div></div></div></section>
+  </div>
+
+  <div class="grid-main lower">
+    <section class="card markets-card" id="markets"><div class="card-head"><div><div class="overline">MARKET WATCH</div><h2>Explore markets</h2></div><a class="subtle-link" href="#markets">All instruments ↗</a></div>
+      <div class="market-table-wrap"><table><thead><tr><th>INSTRUMENT</th><th>PRICE</th><th>24H CHANGE</th><th>MARKET TREND</th><th></th></tr></thead><tbody>
+      <tr><td><span class="asset-icon gold-icon">Au</span><span class="asset-name">XAU/USD<small>Gold / US Dollar</small></span></td><td class="price">2,684.30</td><td class="up">+0.82%</td><td class="spark up">▁▃▂▅▄▆▇</td><td><button class="trade-mini" data-symbol="XAU/USD">Trade</button></td></tr>
+      <tr><td><span class="asset-icon euro-icon">€</span><span class="asset-name">EUR/USD<small>Euro / US Dollar</small></span></td><td class="price">1.08462</td><td class="down">-0.14%</td><td class="spark down">▇▅▆▄▅▃▂</td><td><button class="trade-mini" data-symbol="EUR/USD">Trade</button></td></tr>
+      <tr><td><span class="asset-icon btc-icon">₿</span><span class="asset-name">BTC/USD<small>Bitcoin / US Dollar</small></span></td><td class="price">68,420.50</td><td class="up">+2.31%</td><td class="spark up">▂▃▂▄▅▃▇</td><td><button class="trade-mini" data-symbol="BTC/USD">Trade</button></td></tr>
+      <tr><td><span class="asset-icon nas-icon">N</span><span class="asset-name">NAS100<small>US Tech 100</small></span></td><td class="price">20,112.8</td><td class="up">+0.46%</td><td class="spark up">▁▂▄▃▅▆▇</td><td><button class="trade-mini" data-symbol="NAS100">Trade</button></td></tr>
+      </tbody></table></div><div class="table-footnote">Sample quotes for interface preview only. Not connected to an exchange or liquidity provider.</div>
+    </section>
+    <section class="card order-card" id="trade"><div class="card-head"><div><div class="overline">ORDER TICKET</div><h2>Place a trade</h2></div><span class="demo-chip">DEMO</span></div>
+      <label>Instrument<select id="symbol"><option>XAU/USD</option><option>EUR/USD</option><option>BTC/USD</option><option>NAS100</option></select></label>
+      <div class="field-row"><label>Order type<select id="orderType"><option>Market order</option><option>Limit order (preview)</option><option>Stop order (preview)</option></select></label><label>Volume (lots)<input id="volume" type="number" min=".01" step=".01" value=".10"></label></div>
+      <div class="estimate"><span>Estimated position value</span><b id="estimate">$268.43</b></div>
+      <div class="order-actions"><button class="buy-button" id="buyBtn">Buy <span>↗</span></button><button class="sell-button" id="sellBtn">Sell <span>↘</span></button></div><p class="risk-copy">Orders are simulated in this demo. Trading leveraged products involves significant risk.</p>
+    </section>
+  </div>
+
+  <section class="card transactions" id="history"><div class="card-head"><div><div class="overline">ACCOUNT ACTIVITY</div><h2>Recent transactions</h2></div><a class="subtle-link" href="#history">Full history ↗</a></div><div class="market-table-wrap"><table><thead><tr><th>INSTRUMENT</th><th>TYPE</th><th>VOLUME</th><th>OPEN PRICE</th><th>PROFIT / LOSS</th><th>STATUS</th></tr></thead><tbody id="activityRows">
+  <tr><td><span class="asset-icon gold-icon">Au</span><span class="asset-name">XAU/USD<small>Today, 14:32</small></span></td><td><span class="type-buy">Buy</span></td><td>0.10 lots</td><td>2,671.40</td><td class="up">+$84.20</td><td><span class="status-open">Open</span></td></tr>
+  <tr><td><span class="asset-icon euro-icon">€</span><span class="asset-name">EUR/USD<small>Today, 10:15</small></span></td><td><span class="type-sell">Sell</span></td><td>0.20 lots</td><td>1.08610</td><td class="down">-$22.40</td><td><span class="status-closed">Closed</span></td></tr>
+  </tbody></table></div></section>
+
+  <div class="grid-main lower-sections">
+    <section class="card wallet-card" id="wallet"><div class="card-head"><div><div class="overline">FUNDS MANAGEMENT</div><h2>Wallet</h2></div><span class="demo-chip">PREVIEW</span></div><div class="wallet-balance"><small>Demo wallet balance</small><b>$25,000.00</b></div><div class="wallet-actions"><button class="button primary" data-wallet="Deposit">＋ Deposit funds</button><button class="button secondary" data-wallet="Withdraw">↗ Withdraw funds</button></div><p class="risk-copy">Payment processing is not connected. These controls only demonstrate the proposed wallet flow.</p></section>
+    <section class="card verification-card" id="verification"><div class="card-head"><div><div class="overline">ACCOUNT SECURITY</div><h2>Identity verification</h2></div><span class="status-review">Not submitted</span></div><div class="verify-row"><div class="verify-icon">▣</div><div><b>Complete your profile</b><p>Real broker onboarding normally includes identity and address checks before live services are enabled.</p></div></div><button class="button secondary full" id="kycBtn">Preview verification steps →</button></section>
+  </div>
+  <footer><span>© 2026 JetFx. All rights reserved.</span><span><a href="#terms">Terms</a><a href="#privacy">Privacy</a><a href="#risk">Risk disclosure</a></span></footer>
+</section>
+</main>
+</div>
+
+<div class="modal-backdrop" id="modal"><div class="modal-box"><button class="modal-close" id="modalClose">×</button><div class="modal-mark">JF</div><div class="overline" id="modalEyebrow">JETFX ACCOUNT</div><h2 id="modalTitle">Wallet preview</h2><p id="modalText">This is a visual preview only.</p><div id="modalBody"></div><button class="button primary modal-action" id="modalDone">Got it</button></div></div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body></html>
